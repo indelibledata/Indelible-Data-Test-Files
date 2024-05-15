@@ -1,14 +1,98 @@
-{
-  "": [
-    ".gitattributes",
-    "README.md",
-    "generate-file-list.js",
-    "package-lock.json",
-    "package.json"
-  ],
-  "Containers": {},
-  "Eicar": {},
-  "Files": {},
-  "Macros": {},
-  "node_modules": {}
-}
+[
+  {
+    "name": ".gitattributes",
+    "path": ".gitattributes",
+    "sha": "dfe0770424b2a19faf507a501ebfc23be8f54e7b",
+    "size": 66,
+    "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/.gitattributes?ref=main",
+    "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/.gitattributes",
+    "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/dfe0770424b2a19faf507a501ebfc23be8f54e7b",
+    "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/.gitattributes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/.gitattributes?ref=main",
+      "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/dfe0770424b2a19faf507a501ebfc23be8f54e7b",
+      "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/.gitattributes"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "0a049817e049bc2b59ab8111c88f79b354e728ad",
+    "size": 25,
+    "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/README.md?ref=main",
+    "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/0a049817e049bc2b59ab8111c88f79b354e728ad",
+    "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/0a049817e049bc2b59ab8111c88f79b354e728ad",
+      "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/README.md"
+    }
+  },
+  {
+    "name": "fileList.json",
+    "path": "fileList.json",
+    "sha": "dcba8986f0e1e10967595dbb403b5fd0abc62175",
+    "size": 215,
+    "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/fileList.json?ref=main",
+    "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/fileList.json",
+    "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/dcba8986f0e1e10967595dbb403b5fd0abc62175",
+    "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/fileList.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/fileList.json?ref=main",
+      "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/dcba8986f0e1e10967595dbb403b5fd0abc62175",
+      "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/fileList.json"
+    }
+  },
+  {
+    "name": "generate-file-list.js",
+    "path": "generate-file-list.js",
+    "sha": "6501a14b2dbe9a3c8ed6e7b60a5a8a56191d956e",
+    "size": 1283,
+    "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/generate-file-list.js?ref=main",
+    "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/generate-file-list.js",
+    "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/6501a14b2dbe9a3c8ed6e7b60a5a8a56191d956e",
+    "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/generate-file-list.js",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/generate-file-list.js?ref=main",
+      "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/6501a14b2dbe9a3c8ed6e7b60a5a8a56191d956e",
+      "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/generate-file-list.js"
+    }
+  },
+  {
+    "name": "package-lock.json",
+    "path": "package-lock.json",
+    "sha": "6af758940c38adf3fe86275fe639acf882e08096",
+    "size": 6254,
+    "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/package-lock.json?ref=main",
+    "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/package-lock.json",
+    "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/6af758940c38adf3fe86275fe639acf882e08096",
+    "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/package-lock.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/package-lock.json?ref=main",
+      "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/6af758940c38adf3fe86275fe639acf882e08096",
+      "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/package-lock.json"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "a1af0eada006defa23bb181b09b77d809e0da8ce",
+    "size": 50,
+    "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/package.json?ref=main",
+    "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/a1af0eada006defa23bb181b09b77d809e0da8ce",
+    "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/a1af0eada006defa23bb181b09b77d809e0da8ce",
+      "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/package.json"
+    }
+  }
+]
