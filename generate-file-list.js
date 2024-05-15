@@ -4,7 +4,7 @@ const fs = require('fs');
 const username = 'indelibledata';
 const repo = 'Indelible-Data-Test-Files';
 const mainUrl = `https://api.github.com/repos/${username}/${repo}/contents`;
-const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js', 'fileList.json', 'README.md', '.gitattributes'];
+const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js', 'fileList.json', 'README.md', '.gitattributes', 'node_modules/*'];
 
 async function getFileList(directory = '') {
   try {
@@ -13,11 +13,11 @@ async function getFileList(directory = '') {
 
     for (const item of response.data) {
       if (item.type === 'dir') {
-        if (!ignoreList.includes(item.name)) {
+        if (!ignoreList.some(pattern => item.name.match(new RegExp(pattern)))) {
           const subFiles = await getFileList(`${directory}/${item.name}`);
           fileList.push(...subFiles);
         }
-      } else if (item.type === 'file' && !ignoreList.includes(item.name)) {
+      } else if (item.type === 'file' && !ignoreList.some(pattern => item.name.match(new RegExp(pattern)))) {
         fileList.push({
           name: item.name,
           path: item.path,
