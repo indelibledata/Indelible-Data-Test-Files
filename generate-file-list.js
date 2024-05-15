@@ -8,25 +8,31 @@ const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents?ref=ma
 // Directories and files to ignore
 const ignoreList = ['.github', '.gitattributes', 'README.md', 'generate-file-list.js'];
 
-async function getFileList() {
+async function getFileList(directory = '') {
   try {
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(apiUrl + (directory ? `/${directory}` : ''));
     const fileList = {};
 
     for (const item of response.data) {
       if (item.type === 'dir' && !ignoreList.includes(item.name)) {
-        const directoryUrl = `${apiUrl}/${item.name}`;
-        const directoryResponse = await axios.get(directoryUrl);
-        const files = directoryResponse.data.map(file => file.name);
-        fileList[item.name] = files;
+        fileList[item.name] = await getFileList(item.path);
+      } else if (item.type === 'file') {
+        if (!fileList[directory]) fileList[directory] = [];
+        fileList[directory].push(item.name);
       }
     }
 
-    fs.writeFileSync('fileList.json', JSON.stringify(fileList));
-    console.log('File list generated successfully!');
+    return fileList;
   } catch (error) {
     console.error('Error generating file list:', error.message);
+    return {};
   }
 }
 
-getFileList();
+async function generateFileList() {
+  const fileList = await getFileList();
+  fs.writeFileSync('fileList.json', JSON.stringify(fileList, null, 2));
+  console.log('File list generated successfully!');
+}
+
+generateFileList();
