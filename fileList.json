@@ -1,0 +1,14 @@
+{
+  "": [
+    ".gitattributes",
+    "README.md",
+    "generate-file-list.js",
+    "package-lock.json",
+    "package.json"
+  ],
+  "Containers": {},
+  "Eicar": {},
+  "Files": {},
+  "Macros": {},
+  "node_modules": {}
+}
