@@ -6,40 +6,42 @@ const repo = 'Indelible-Data-Test-Files';
 const mainUrl = `https://api.github.com/repos/${username}/${repo}/contents`;
 const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js', 'fileList.json', 'README.md', '.gitattributes', 'node_modules/*'];
 
-async function getFileList(directory = '') {
+async function getFileList(directory = '', parentPath = '') {
   try {
-    const response = await axios.get(`${mainUrl}/${directory}?ref=main`);
-    const directoryData = directory ? { name: directory.split('/').pop(), path: directory, type: 'dir', files: [] } : null;
+    const fullPath = parentPath ? `${parentPath}/${directory}` : directory;
+    const response = await axios.get(`${mainUrl}/${fullPath}?ref=main`);
+    const directoryData = {
+      name: directory || repo,
+      path: fullPath || '/',
+      type: 'dir',
+      files: []
+    };
 
     for (const item of response.data) {
-      if (ignoreList.some(pattern => item.name.match(new RegExp(pattern)))) {
+      if (ignoreList.some(pattern => new RegExp(pattern).test(item.name))) {
         continue;
       }
 
       if (item.type === 'dir') {
-        const subFiles = await getFileList(`${directory}/${item.name}`);
-        if (directoryData) {
-          directoryData.files.push(subFiles);
-        }
+        const subFiles = await getFileList(item.name, fullPath);
+        directoryData.files.push(subFiles);
       } else if (item.type === 'file') {
-        if (directoryData) {
-          directoryData.files.push({
-            name: item.name,
-            path: item.path,
-            sha: item.sha,
-            size: item.size,
-            url: item.url,
-            html_url: item.html_url,
-            git_url: item.git_url,
-            download_url: item.download_url,
-            type: item.type,
-            _links: item._links
-          });
-        }
+        directoryData.files.push({
+          name: item.name,
+          path: item.path,
+          sha: item.sha,
+          size: item.size,
+          url: item.url,
+          html_url: item.html_url,
+          git_url: item.git_url,
+          download_url: item.download_url,
+          type: item.type,
+          _links: item._links
+        });
       }
     }
 
-    return directoryData || [];
+    return directoryData;
   } catch (error) {
     console.error('Error generating file list:', error.message);
     return [];
