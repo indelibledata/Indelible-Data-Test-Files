@@ -11,7 +11,11 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
+
+      # Pull the latest changes from the remote repository
+      - name: Pull Latest Changes
+        run: git pull origin main
 
       - name: Install Node.js
         uses: actions/setup-node@v4
