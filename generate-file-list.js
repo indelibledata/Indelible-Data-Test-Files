@@ -3,20 +3,20 @@ const fs = require('fs');
 
 const username = 'indelibledata';
 const repo = 'Indelible-Data-Test-Files';
-const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents?ref=main`;
-
-// Files and directories to ignore
+const mainUrl = `https://api.github.com/repos/${username}/${repo}/contents`;
 const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js', 'fileList.json', 'README.md', '.gitattributes'];
 
 async function getFileList(directory = '') {
   try {
-    const response = await axios.get(apiUrl + (directory ? `/${directory}` : ''));
+    const response = await axios.get(`${mainUrl}/${directory}?ref=main`);
     const fileList = [];
 
     for (const item of response.data) {
       if (item.type === 'dir') {
-        const files = await getFileList(item.path);
-        fileList.push(...files);
+        if (!ignoreList.includes(item.name)) {
+          const subFiles = await getFileList(`${directory}/${item.name}`);
+          fileList.push(...subFiles);
+        }
       } else if (item.type === 'file' && !ignoreList.includes(item.name)) {
         fileList.push({
           name: item.name,
