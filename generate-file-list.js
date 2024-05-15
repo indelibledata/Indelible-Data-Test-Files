@@ -9,31 +9,37 @@ const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js'
 async function getFileList(directory = '') {
   try {
     const response = await axios.get(`${mainUrl}/${directory}?ref=main`);
-    const fileList = [];
+    const directoryData = directory ? { name: directory.split('/').pop(), path: directory, type: 'dir', files: [] } : null;
 
     for (const item of response.data) {
+      if (ignoreList.some(pattern => item.name.match(new RegExp(pattern)))) {
+        continue;
+      }
+
       if (item.type === 'dir') {
-        if (!ignoreList.some(pattern => item.name.match(new RegExp(pattern)))) {
-          const subFiles = await getFileList(`${directory}/${item.name}`);
-          fileList.push(...subFiles);
+        const subFiles = await getFileList(`${directory}/${item.name}`);
+        if (directoryData) {
+          directoryData.files.push(subFiles);
         }
-      } else if (item.type === 'file' && !ignoreList.some(pattern => item.name.match(new RegExp(pattern)))) {
-        fileList.push({
-          name: item.name,
-          path: item.path,
-          sha: item.sha,
-          size: item.size,
-          url: item.url,
-          html_url: item.html_url,
-          git_url: item.git_url,
-          download_url: item.download_url,
-          type: item.type,
-          _links: item._links
-        });
+      } else if (item.type === 'file') {
+        if (directoryData) {
+          directoryData.files.push({
+            name: item.name,
+            path: item.path,
+            sha: item.sha,
+            size: item.size,
+            url: item.url,
+            html_url: item.html_url,
+            git_url: item.git_url,
+            download_url: item.download_url,
+            type: item.type,
+            _links: item._links
+          });
+        }
       }
     }
 
-    return fileList;
+    return directoryData || [];
   } catch (error) {
     console.error('Error generating file list:', error.message);
     return [];
