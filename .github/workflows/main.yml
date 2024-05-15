@@ -22,21 +22,30 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Run Script
+      - name: Run Script to Generate fileList.json
         run: |
           npm install axios
           node generate-file-list.js
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+
+      # List files in the current directory for debugging
+      - name: List Files in Current Directory
+        run: ls -al
 
       # Add fileList.json to the Git staging area
       - name: Add File List to Git
         run: |
-          git add fileList.json
-          git commit -m "Add fileList.json"
+          git add fileList.json || echo "No fileList.json found"
+          git status
+        working-directory: ${{ github.workspace }}
 
-      - name: Push Changes
+      # Commit and push changes
+      - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git commit -m "Update fileList.json" || echo "Nothing to commit"
           git push https://github.com/${{ github.repository }}.git HEAD:main
         env:
           GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
