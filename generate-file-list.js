@@ -5,27 +5,35 @@ const username = 'indelibledata';
 const repo = 'Indelible-Data-Test-Files';
 const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents?ref=main`;
 
-// Directories and files to ignore
-const ignoreList = ['.github', '.gitattributes', 'README.md', 'generate-file-list.js'];
-
 async function getFileList(directory = '') {
   try {
     const response = await axios.get(apiUrl + (directory ? `/${directory}` : ''));
-    const fileList = {};
+    const fileList = [];
 
     for (const item of response.data) {
-      if (item.type === 'dir' && !ignoreList.includes(item.name)) {
-        fileList[item.name] = await getFileList(item.path);
+      if (item.type === 'dir') {
+        const files = await getFileList(item.path);
+        fileList.push(...files);
       } else if (item.type === 'file') {
-        if (!fileList[directory]) fileList[directory] = [];
-        fileList[directory].push(item.name);
+        fileList.push({
+          name: item.name,
+          path: item.path,
+          sha: item.sha,
+          size: item.size,
+          url: item.url,
+          html_url: item.html_url,
+          git_url: item.git_url,
+          download_url: item.download_url,
+          type: item.type,
+          _links: item._links
+        });
       }
     }
 
     return fileList;
   } catch (error) {
     console.error('Error generating file list:', error.message);
-    return {};
+    return [];
   }
 }
 
