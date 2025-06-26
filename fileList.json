@@ -55,6 +55,22 @@
           }
         },
         {
+          "name": "eicar.command",
+          "path": "EICAR/eicar.command",
+          "sha": "d3bf78b09c7a306cac57d1bd9c4051370d4fd3d1",
+          "size": 127,
+          "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/EICAR/eicar.command?ref=main",
+          "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/EICAR/eicar.command",
+          "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/d3bf78b09c7a306cac57d1bd9c4051370d4fd3d1",
+          "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/EICAR/eicar.command",
+          "type": "file",
+          "_links": {
+            "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/EICAR/eicar.command?ref=main",
+            "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/d3bf78b09c7a306cac57d1bd9c4051370d4fd3d1",
+            "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/EICAR/eicar.command"
+          }
+        },
+        {
           "name": "eicar.gz",
           "path": "EICAR/eicar.gz",
           "sha": "3f2169e6671b0ff1a04056860b03906ff8b44d78",
@@ -68,6 +84,22 @@
             "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/EICAR/eicar.gz?ref=main",
             "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/3f2169e6671b0ff1a04056860b03906ff8b44d78",
             "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/EICAR/eicar.gz"
+          }
+        },
+        {
+          "name": "eicar.pkg",
+          "path": "EICAR/eicar.pkg",
+          "sha": "474f829671bb229a36954f80be3255b56aa4191c",
+          "size": 523,
+          "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/EICAR/eicar.pkg?ref=main",
+          "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/EICAR/eicar.pkg",
+          "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/474f829671bb229a36954f80be3255b56aa4191c",
+          "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/EICAR/eicar.pkg",
+          "type": "file",
+          "_links": {
+            "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/EICAR/eicar.pkg?ref=main",
+            "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/474f829671bb229a36954f80be3255b56aa4191c",
+            "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/EICAR/eicar.pkg"
           }
         },
         {
