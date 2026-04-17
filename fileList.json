@@ -34,6 +34,22 @@
       ]
     },
     {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "sha": "8a2e4395e6d7f8ee9645b722172ae894aef6ea72",
+      "size": 420,
+      "url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/.gitignore?ref=main",
+      "html_url": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/.gitignore",
+      "git_url": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/8a2e4395e6d7f8ee9645b722172ae894aef6ea72",
+      "download_url": "https://raw.githubusercontent.com/indelibledata/Indelible-Data-Test-Files/main/.gitignore",
+      "type": "file",
+      "_links": {
+        "self": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/contents/.gitignore?ref=main",
+        "git": "https://api.github.com/repos/indelibledata/Indelible-Data-Test-Files/git/blobs/8a2e4395e6d7f8ee9645b722172ae894aef6ea72",
+        "html": "https://github.com/indelibledata/Indelible-Data-Test-Files/blob/main/.gitignore"
+      }
+    },
+    {
       "name": "EICAR",
       "path": "EICAR",
       "type": "dir",
