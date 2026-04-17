@@ -4,7 +4,7 @@ const fs = require('fs');
 const username = 'indelibledata';
 const repo = 'Indelible-Data-Test-Files';
 const mainUrl = `https://api.github.com/repos/${username}/${repo}/contents`;
-const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js', 'fileList.json', 'README.md', '.gitattributes', 'node_modules/*'];
+const ignoreList = ['package.json', 'package-lock.json', 'generate-file-list.js', 'fileList.json', 'README.md', '.gitattributes', 'node_modules/*', '.gitignore'];
 
 async function getFileList(directory = '', parentPath = '') {
   try {
